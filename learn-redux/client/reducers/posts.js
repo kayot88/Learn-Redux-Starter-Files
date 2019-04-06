@@ -3,8 +3,20 @@
 //2. copy of current state
 
 function posts(state = [], action) {
-  console.log('The posts reducers was lounched');
-  console.log(state, action);
-  return state;
+  switch (action.type) {
+    case 'INCREMENT_LIKES':
+      const i = action.index;
+      // console.log(i);
+      return [
+        ...state.slice(0, i),
+        { ...state[i], likes: state[i].likes + 1 },
+        ...state.slice(i + 1)
+      ];
+
+    default:
+      return state
+  }
+  // console.log(state, action);
+  // return state;
 }
 export default posts;
