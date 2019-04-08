@@ -6,7 +6,7 @@ export function increment(index) {
 }
 
 export function addComment(postId, author, comment) {
-  console.log('dispatching the commits');
+  
   return {
     type: 'ADD_COMMENT',
     postId,
@@ -17,6 +17,7 @@ export function addComment(postId, author, comment) {
 export function removeComment(postId, i) {
   return {
     type: 'REMOVE_COMMENT',
+    postId,
     i
   };
 }
